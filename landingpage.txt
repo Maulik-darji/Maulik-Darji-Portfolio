@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: sans-serif;
+      background-color: #000;
+      color: white;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    aside.left {
+      width: 50vw;
+      height: 100vh;
+      padding: 40px;
+      background-color: #000;
+      overflow: hidden;
+      position: fixed;
+      left: 0;
+      top: 0;
+    }
+
+    .right {
+      width: 50vw;
+      height: 100vh;
+      overflow-y: auto;
+      margin-left: 50vw;
+      background-color: #000;
+      padding: 20px;
+    }
+
+    img.profile {
+      border-radius: 50%;
+      height: 100px;
+      width: 100px;
+      object-fit: cover;
+      user-select: none;
+    }
+
+    .Information h1 {
+      height: 40px;
+      font-weight: 1000;
+      user-select: none;
+    }
+
+    img.verified {
+      width: 20px;
+      vertical-align: middle;
+      margin-left: 5px;
+    }
+
+    .About, .Contact, .Skill {
+      margin-top: 20px;
+      font-family: Inter, sans-serif;
+      word-spacing: normal;
+      user-select: none;
+    }
+    
+    
+
+    .About span, .Contact span, .Skill span {
+      color: rgb(122, 122, 122);
+      font-size: 12px;
+      font-family: Inter, sans-serif;
+      font-weight: 600;
+      user-select: none;
+    }
+
+    .About p, .Contact p {
+      max-width: 300px;
+      word-wrap: break-word;
+      line-height: 1.6;
+      font-size: 15px;
+      user-select: none;
+    }
+
+    .Contact p {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      font-size: 15px;
+      max-width: 300px;
+      color: white;
+    }
+
+    .Contact img {
+      vertical-align: middle;
+      height: 18px;
+      width: 18px;
+    }
+
+    .mailid:hover, .phonenumber:hover, .linked_acc:hover {
+      text-decoration: underline;
+    }
+
+    .linked_acc {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .linked_acc svg {
+      width: 18px;
+      height: 18px;
+      fill: white;
+      flex-shrink: 0;
+    }
+
+    .skill-list {
+      max-width: 300px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 10px 0;
+    }
+
+    .skill-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 30px;
+      padding: 6px 12px;
+      background-color: #5f5f5f6b;
+      color: #fff;
+      border-radius: 10px;
+      font-weight: 300;
+      font-size: 14px;
+      user-select: none;
+    }
+
+    .skill-item:hover {
+      background: linear-gradient(135deg, #4fa4ff6b, #a36bff6b);
+      cursor: pointer;
+    }
+
+
+
+    .lang-list {
+      max-width: 300px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 10px 0;
+    }
+
+    .lang-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #222;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 400;
+      user-select: none;
+    }
+
+    .lang-item img {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      aside.left, .right {
+        width: 100vw;
+        height: auto;
+        position: static;
+        overflow: visible;
+      }
+
+      img.profile {
+        height: 80px;
+        width: 80px;
+      }
+
+      img.verified {
+        width: 16px;
+      }
+    }
+
+    .right::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    .right::-webkit-scrollbar-track {
+      background: #505050;
+    }
+    
+    .right::-webkit-scrollbar-thumb {
+      background: linear-gradient(#4fa4ff, #a36bff);
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- LEFT SECTION -->
+    <aside class="left">
+      <div class="Information">
+        <img src="SRC/profile.jpg" alt="Profile" class="profile" draggable="false"/>
+        <h1>
+          Maulik Darji
+          <img src="SRC/google-verified-1.svg" alt="Verified Badge" class="verified" draggable="false"/>
+        </h1>
+        <p><span style="color: rgb(122, 122, 122);">he/him</span></p>
+      </div>
+
+      <div class="About">
+        <p><span>ABOUT</span></p>
+        <p>Ahmedabad based full-stack software engineer with 7 years of experience in building web and mobile apps.</p>
+      </div>
+
+      <div class="Contact">
+        <p><span>CONTACT</span></p>
+        <div class="mailid" style="margin-top:10px;">
+          <img src="SRC/mail.svg" alt="Mail Icon" class="mail_icon" />
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=maulik.darji2005@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="color: white; text-decoration: none;"
+          >
+            maulik.darji2005@gmail.com
+          </a>
+        </div>
+
+        <div class="phonenumber" style="margin-top:10px;">
+          <img src="SRC/phone.svg" alt="Phone Icon" />
+          <a href="https://wa.me/917405413342" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none;">
+            7405413342
+          </a>
+        </div>
+
+        <div class="linked_acc" style="margin-top:4px;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+            <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.3h.1c.5-.9 1.7-1.8 3.5-1.8 3.7 0 4.4 2.4 4.4 5.6V24h-4V15c0-2.1-.1-4.8-2.9-4.8-2.9 0-3.4 2.3-3.4 4.7V24h-4V8z"/>
+          </svg>
+          <a href="https://linkedin.com/in/maulikdarji" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none;">
+            Maulik Darji
+          </a>
+        </div>
+      </div>
+
+      <div class="Skill">
+        <p><span>SKILLS</span></p>
+        <div class="skill-list">
+          <div class="skill-item">React.js</div>
+          <div class="skill-item">Angular</div>
+          <div class="skill-item">Vue.js</div>
+          <div class="skill-item">HTML5</div>
+          <div class="skill-item">CSS3/SCSS</div>
+            <div class="skill-item">JavaScript</div>
+          <div class="skill-item">TypeScript</div>
+        </div>
+      </div>
+
+      <div class="Skill">
+        <p><span>LANGUAGES</span></p>
+        <div class="lang-list">
+          <div class="lang-item">
+            <img src="SRC/circle-flags-2.7.0/circle-flags-2.7.0/flags/us.svg" alt="English Flag" />
+            English
+          </div>
+          <div class="lang-item">
+            <img src="SRC/circle-flags-2.7.0/circle-flags-2.7.0/flags/in.svg" alt="Gujarati Flag" />
+            Gujarati
+          </div>
+          <div class="lang-item">
+            <img src="SRC/circle-flags-2.7.0/circle-flags-2.7.0/flags/in.svg" alt="Hindi Flag" />
+            Hindi
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- RIGHT SECTION -->
+    <div class="right">
+      <h1>Right Panel (Scrollable)</h1>
+      <div class="content">
+        <p>This part scrolls when the content is long.</p>
+        <p>Scroll down to see it in action.</p>
+        <p>Lorem ipsum dolor sit amet...</p>
+        <p style="margin-top: 1000px;">Bottom of scroll area</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
