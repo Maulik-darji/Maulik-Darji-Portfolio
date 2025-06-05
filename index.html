@@ -80,13 +80,9 @@ aside.left {
   max-width: 100%;
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
+  scroll-snap-type: x proximity;
   padding: 20px 40px;
-  cursor: grab;
-}
-
-.right .projects:active {
-  cursor: grabbing;
+  -webkit-user-drag: none;
 }
 
 .right .projects .project-container {
@@ -121,8 +117,8 @@ aside.left {
   transition: transform 0.3s ease;
   scroll-snap-align: center;
   user-select: none;
+  position: relative;
 }
-
 
 .right .project-card:hover {
   transform: scale(1.02);
@@ -150,6 +146,14 @@ aside.left {
   line-height: 1.6;
   word-spacing: 0.15em;
   letter-spacing: 0.02em;
+}
+
+.right .project-card a {
+  color: inherit;
+  text-decoration: underline;
+  display: block;
+  position: relative;
+  z-index: 2;
 }
 
 .right .experience,
@@ -194,8 +198,6 @@ aside.left {
 .right .test-card .details {
   flex: 1;
 }
-
-
 
 .right .exp-card h3,
 .right .edu-card h3,
@@ -457,9 +459,9 @@ img.verified {
 .social_container {
   display: flex;
   justify-content: center;
-  align-items: center; /* Explicitly center vertically */
+  align-items: center;
   gap: 20px;
-  width: 100%; /* Ensure it takes full width of .socialbox */
+  width: 100%;
 }
 
 .twitter,
@@ -492,7 +494,7 @@ img.verified {
 .github img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Ensure images scale correctly */
+  object-fit: contain;
 }
 
 .twitter:hover,
@@ -1016,24 +1018,24 @@ img.verified {
   }
 
   .nav-menu {
-    display: flex; /* Show nav-menu by default */
+    display: flex;
     position: fixed;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
     width: auto;
-    max-width: calc(100% - 40px); /* Prevent overflow */
+    max-width: calc(100% - 40px);
     padding: 10px 15px;
     gap: 10px;
     background-color: rgba(34, 34, 34, 0.8);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    flex-direction: row; /* Horizontal layout */
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
     z-index: 1000;
-    overflow-x: auto; /* Allow scrolling if needed */
+    overflow-x: auto;
     white-space: nowrap;
   }
 
@@ -1072,7 +1074,7 @@ img.verified {
   }
 
   .hamburger {
-    display: none; /* Hide hamburger menu */
+    display: none;
   }
 } 
 
@@ -1141,20 +1143,20 @@ img.verified {
     padding: 5px 10px;
   }
 
-.socialbox {
+  .socialbox {
     max-width: 180px;
     padding: 10px;
     display: flex;
-    justify-content: center; /* Center the .social_container */
+    justify-content: center;
     align-items: center;
   }
 
-.social_container {
+  .social_container {
     gap: 12px;
-    height: auto; /* Remove fixed height to prevent clipping */
+    height: auto;
   }
 
-.twitter a,
+  .twitter a,
   .thread a,
   .instagram a,
   .github a {
@@ -1319,7 +1321,7 @@ img.verified {
     padding: 4px 8px;
   }
 
-.socialbox {
+  .socialbox {
     max-width: 150px;
     padding: 8px;
     display: flex;
@@ -1330,7 +1332,7 @@ img.verified {
 
   .social_container {
     gap: 10px;
-    height: auto; /* Remove fixed height */
+    height: auto;
   }
 
   .social_container a {
@@ -1371,7 +1373,9 @@ img.verified {
   }
 
   .right .project-card h3 {
-    font-size: 12px;
+    width: 28px;
+    height: 28px;
+    font-size: 13px;
   }
 
   .right .project-card p {
@@ -1463,7 +1467,7 @@ img.verified {
       <a href="#experience" draggable="false">Experience</a>
       <a href="#education" draggable="false">Education</a>
       <a href="#certifications" draggable="false">License & Certification</a>
-      <a href="#testimonials"draggable="false">Testimonials</a>
+      <a href="#testimonials" draggable="false">Testimonials</a>
       <a href="#contact" draggable="false">Contact</a>
     </nav>
 
@@ -1576,27 +1580,27 @@ img.verified {
         <div class="project-container">
           <div class="project-card">
             <div class="icon" style="background-color: #ffaa80;"></div>
-            <h3><a href="https://maulik-darji-portfolio.vercel.app/" target="_self" style="color: inherit; text-decoration: underline;" >Portfolio Website</a></h3>
+            <h3><a href="https://maulik-darji-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer">Portfolio Website</a></h3>
             <p>June 5, 2025</p>
           </div>
           <div class="project-card">
             <div class="icon" style="background-color: #b3a4ff;"></div>
-            <h3><a href="https://github.com/Maulik-darji/KisanKart" target="_blank" style="color: inherit; text-decoration: underline;">KisanKart</a></h3>
+            <h3><a href="https://github.com/Maulik-darji/KisanKart" target="_blank" rel="noopener noreferrer">KisanKart</a></h3>
             <p>Jan 31, 2025 • Frontend Developer/Backend Developer</p>
           </div>
           <div class="project-card">
             <div class="icon" style="background-color: #a4e4d4;"></div>
-            <h3><a href="https://github.com/Maulik-darji/google-sheet-credential-extractor" target="_blank" style="color: inherit; text-decoration: underline;">Spreadsheet Extractor</a></h3>
+            <h3><a href="https://github.com/Maulik-darji/google-sheet-credential-extractor" target="_blank" rel="noopener noreferrer">Spreadsheet Extractor</a></h3>
             <p>June 3, 2025</p>
           </div>
           <div class="project-card">
             <div class="icon" style="background-color: #ffcc66;"></div>
-            <h3><a href="https://github.com/Maulik-darji/Chrome-Live-Clock-Extension" target="_blank" style="color: inherit; text-decoration: underline;">Live Clock Extension</a></h3>
-            <p>Nove 9, 2024 • Frontend Developer • Productivity</p>
+            <h3><a href="https://github.com/Maulik-darji/Chrome-Live-Clock-Extension" target="_blank" rel="noopener noreferrer">Live Clock Extension</a></h3>
+            <p>Nov 9, 2024 • Frontend Developer • Productivity</p>
           </div>
           <div class="project-card">
             <div class="icon" style="background-color: #66cccc;"></div>
-            <h3><a href="https://github.com/Maulik-darji/GoogleClassroom-Darkmode" target="_blank" style="color: inherit; text-decoration: underline;">Live Clock Extension</a></h3>
+            <h3><a href="https://github.com/Maulik-darji/GoogleClassroom-Darkmode" target="_blank" rel="noopener noreferrer">Live Clock Extension</a></h3>
             <p>Nov 12, 2024 • Frontend Developer • Productivity</p>
           </div>
         </div>
@@ -1614,47 +1618,43 @@ img.verified {
         </div>
       </section>
 
-<section class="education" id="education">
-  <h2>Education</h2>
-
-  <div class="edu-card">
-    <div class="icon" style="background: url(SRC/Education/college.jpg); background-size: cover; "></div>
-    <div class="details">
-      <h3>Bachelor of Technology in Computer Science (CSE)</h3>
-      <div class="meta">Jun 23 – Present (2027) • 
-        <a href="https://admissions.indusuni.ac.in/" target="_blank" style="color: inherit; text-decoration: underline;">Indus University</a> • Ahmedabad, Gujarat
-      </div>
-      <p>Currently studying Computer Science with a passion for building impactful tech solutions—actively applying skills to grow a startup.</p>
-    </div>
-  </div>
-
-  <div class="edu-card">
-    <div class="icon" style="background: url(SRC/Education/school.jpg); background-size: cover;"></div>
-    <div class="details">
-      <h3>Pre-University Education</h3>
-      <div class="meta">Jun 11 – Jun 13 • 
-        <a href="https://amd.sgvp.org/" target="_blank" style="color: inherit; text-decoration: underline;">SGVP International School</a> • Ahmedabad, Gujarat
-      </div>
-      <p>Graduated with honors. Relevant coursework included Advanced Algorithms, Web Development, and User Interface Design.</p>
-    </div>
-  </div>
-</section>
-
+      <section class="education" id="education">
+        <h2>Education</h2>
+        <div class="edu-card">
+          <div class="icon" style="background: url(SRC/Education/college.jpg); background-size: cover;"></div>
+          <div class="details">
+            <h3>Bachelor of Technology in Computer Science (CSE)</h3>
+            <div class="meta">Jun 23 – Present (2027) • 
+              <a href="https://admissions.indusuni.ac.in/" target="_blank" style="color: inherit; text-decoration: underline;">Indus University</a> • Ahmedabad, Gujarat
+            </div>
+            <p>Currently studying Computer Science with a passion for building impactful tech solutions—actively applying skills to grow a startup.</p>
+          </div>
+        </div>
+        <div class="edu-card">
+          <div class="icon" style="background: url(SRC/Education/school.jpg); background-size: cover;"></div>
+          <div class="details">
+            <h3>Pre-University Education</h3>
+            <div class="meta">Jun 11 – Jun 13 • 
+              <a href="https://amd.sgvp.org/" target="_blank" style="color: inherit; text-decoration: underline;">SGVP International School</a> • Ahmedabad, Gujarat
+            </div>
+            <p>Graduated with honors. Relevant coursework included Advanced Algorithms, Web Development, and User Interface Design.</p>
+          </div>
+        </div>
+      </section>
 
       <section class="certifications" id="certifications">
         <h2>License & Certification</h2>
         <div class="cert-card">
           <div class="icon" style="background: url(SRC/Certification/freecodecamp.png); background-size: cover;" ></div>
           <div class="details">
-            <h3><a href="https://www.freecodecamp.org/certification/Maulik_Darji/responsive-web-design" target="_blank" style="color: inherit; text-decoration: none;" >Responsive Web Design</a></h3>
+            <h3><a href="https://www.freecodecamp.org/certification/Maulik_Darji/responsive-web-design" target="_blank" style="color: inherit; text-decoration: none;">Responsive Web Design</a></h3>
             <div class="meta">Issued 2024</div>
           </div>
         </div>
         <div class="cert-card">
-          <div class="icon"style="background: url(SRC/Certification/postman.png); background-size: cover;" >
-          </div>
+          <div class="icon" style="background: url(SRC/Certification/postman.png); background-size: cover;"></div>
           <div class="details">
-            <h3><a href="SRC/Certification/postman.png" target="_blank" style="color: inherit; text-decoration: none;" >Postman API Fundamentals Student Expert</a></h3>
+            <h3><a href="SRC/Certification/postman.png" target="_blank" style="color: inherit; text-decoration: none;">Postman API Fundamentals Student Expert</a></h3>
             <div class="meta">Issued 2024</div>
           </div>
         </div>
@@ -1836,12 +1836,10 @@ img.verified {
           navLinks.forEach(nav => nav.classList.remove('active'));
           link.classList.add('active');
 
-          // Close menu on phones after clicking a link
           if (window.innerWidth <= 768) {
             navMenu.classList.remove('open');
             hamburger.classList.remove('active');
           }
-
         }
       });
     });
@@ -1885,94 +1883,7 @@ img.verified {
     // Projects Section Scroll
     const projectsSection = document.querySelector('.projects');
     const projectCards = document.querySelectorAll('.project-card');
-    let isDraggingProjects = false;
-    let startXProjects = 0;
-    let scrollLeft = 0;
-    let velocity = 0;
-    let lastX = 0;
-    let lastTime = 0;
     let animationFrame;
-
-    projectsSection.addEventListener('mousedown', (e) => {
-      isDraggingProjects = true;
-      startXProjects = e.pageX - projectsSection.offsetLeft;
-      scrollLeft = projectsSection.scrollLeft;
-      lastX = e.pageX;
-      lastTime = performance.now();
-      velocity = 0;
-      projectsSection.style.cursor = 'grabbing';
-      cancelAnimationFrame(animationFrame);
-      e.preventDefault();
-    });
-
-    projectsSection.addEventListener('touchstart', (e) => {
-      isDraggingProjects = true;
-      startXProjects = e.touches[0].pageX - projectsSection.offsetLeft;
-      scrollLeft = projectsSection.scrollLeft;
-      lastX = e.touches[0].pageX;
-      lastTime = performance.now();
-      velocity = 0;
-      projectsSection.style.cursor = 'grabbing';
-      cancelAnimationFrame(animationFrame);
-      e.preventDefault();
-    });
-
-    projectsSection.addEventListener('mousemove', (e) => {
-      if (!isDraggingProjects) return;
-      e.preventDefault();
-      const x = e.pageX - projectsSection.offsetLeft;
-      const walk = (x - startXProjects) * 1.5;
-      projectsSection.scrollLeft = scrollLeft - walk;
-
-      const currentTime = performance.now();
-      const timeDiff = currentTime - lastTime;
-      if (timeDiff > 0) {
-        velocity = ((e.pageX - lastX) / timeDiff) * 8;
-      }
-      lastX = e.pageX;
-      lastTime = currentTime;
-    });
-
-    projectsSection.addEventListener('touchmove', (e) => {
-      if (!isDraggingProjects) return;
-      e.preventDefault();
-      const x = e.touches[0].pageX - projectsSection.offsetLeft;
-      const walk = (x - startXProjects) * 1.5;
-      projectsSection.scrollLeft = scrollLeft - walk;
-
-      const currentTime = performance.now();
-      const timeDiff = currentTime - lastTime;
-      if (timeDiff > 0) {
-        velocity = ((e.touches[0].pageX - lastX) / timeDiff) * 8;
-      }
-      lastX = e.touches[0].pageX;
-      lastTime = currentTime;
-    });
-
-    projectsSection.addEventListener('mouseup', () => {
-      if (!isDraggingProjects) return;
-      isDraggingProjects = false;
-      projectsSection.style.cursor = 'grab';
-      applyMomentum();
-      updateCenterCard();
-    });
-
-    projectsSection.addEventListener('touchend', () => {
-      if (!isDraggingProjects) return;
-      isDraggingProjects = false;
-      projectsSection.style.cursor = 'grab';
-      applyMomentum();
-      updateCenterCard();
-    });
-
-    projectsSection.addEventListener('mouseleave', () => {
-      if (isDraggingProjects) {
-        isDraggingProjects = false;
-        projectsSection.style.cursor = 'grab';
-        applyMomentum();
-        updateCenterCard();
-      }
-    });
 
     projectsSection.addEventListener('wheel', (e) => {
       e.preventDefault();
@@ -1982,31 +1893,7 @@ img.verified {
       updateCenterCard();
     });
 
-    function applyMomentum() {
-      if (Math.abs(velocity) < 0.05) {
-        updateCenterCard();
-        return;
-      }
-
-      const friction = 0;
-      let currentScroll = projectsSection.scrollLeft;
-
-      function animate() {
-        currentScroll += velocity;
-        projectsSection.scrollLeft = currentScroll;
-        velocity *= friction;
-
-        if (Math.abs(velocity) > 0.05) {
-          animationFrame = requestAnimationFrame(animate);
-        } else {
-          updateCenterCard();
-        }
-      }
-
-      animationFrame = requestAnimationFrame(animate);
-    }
-
-    function updateCenterCard() {
+    function updateCenterCard(e) {
       const sectionRect = projectsSection.getBoundingClientRect();
       const sectionCenter = sectionRect.left + sectionRect.width / 2;
 
@@ -2020,12 +1907,36 @@ img.verified {
         } else {
           card.classList.remove('center');
         }
+
+        if (e && (e.type === 'touchend' || e.type === 'mouseup')) {
+          const link = card.querySelector('a');
+          if (link) {
+            const rect = link.getBoundingClientRect();
+            const x = e.type === 'touchend' ? e.changedTouches[0].clientX : e.clientX;
+            const y = e.type === 'touchend' ? e.changedTouches[0].clientY : e.clientY;
+            if (x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom) {
+              link.click();
+            }
+          }
+        }
       });
     }
 
     projectsSection.addEventListener('scroll', updateCenterCard);
     window.addEventListener('resize', updateCenterCard);
     updateCenterCard();
+
+    projectCards.forEach(card => {
+      const link = card.querySelector('a');
+      if (link) {
+        link.addEventListener('touchstart', (e) => {
+          e.stopPropagation();
+        });
+        link.addEventListener('mousedown', (e) => {
+          e.stopPropagation();
+        });
+      }
+    });
   </script>
 </body>
 </html>
